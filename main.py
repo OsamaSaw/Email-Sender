@@ -48,9 +48,10 @@ if __name__ == '__main__':
 
     input("\nSend Emails? ")
 
-    yag = yagmail.SMTP("testing.email.git@gmail.com", oauth2_file="oauth2_creds.json")
+    yag = yagmail.SMTP("testing.email.git@gmail.com", oauth2_file="oauth2_creds.json")  # feel free to use this test Email, password :Testing!123
     for email, name in email_list.items():
         subject, rec, body = get_email_body(name)
+        input("wait")
         yag.send(to=email, subject=subject, contents=[body, img])  # [body, img, html]
         print(f"mail Sent To {email}")
 
